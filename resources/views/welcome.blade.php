@@ -9,48 +9,29 @@
 <body>
     <table>
         <tr>
-            <td>Название</td>
-            <td>Урон</td>
-            <td>Броня</td>
-            <td>Здоровье</td>
-            <td>Количество юнитов в отряде </td>
-            <td>Атака</td>
-            <td>Защита</td>
+            <td>Г</td>
+            <td>Г</td>
+            <td>Г</td>
+            <td>Г</td>
         </tr>
         <tr>
-            <td>Грабитель</td>
-            <td>10</td>
-            <td>30</td>
-            <td>60</td>
-            <td>60</td>
-            <td>30</td>
-            <td>30</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>K</td>
+            <td>K</td>
+            <td>K</td>
+            <td>K</td>
         </tr>
     </table>
-    <table>
-        <tr>
-            <td>Название</td>
-            <td>Урон</td>
-            <td>Броня</td>
-            <td>Здоровье</td>
-            <td>Количество юнитов в отряде </td>
-            <td>Атака</td>
-            <td>Защита</td>
-        </tr>
-        <tr>
-            <td>Крестьянин</td>
-            <td>10</td>
-            <td>10</td>
-            <td>40</td>
-            <td>90</td>
-            <td>18</td>
-            <td>20</td>
-        </tr>
-    </table>
-    <?php
-        $w1 = new EvTimer(2, 0, function () {
-            echo "2 секунды прошло\n";
-        });
-    ?>
 </body>
 </html>
