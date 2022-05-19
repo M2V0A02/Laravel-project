@@ -6,6 +6,11 @@
     display: flex;
 }
 
+.battle_panel{
+    display: flex;
+    flex-direction: column;
+}
+
 .control_battle {
     display: flex;
     flex-direction: column;
@@ -14,6 +19,12 @@
 .container_control_battle {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.control_battle_button_select_unit {
+    width: 50%;
+    margin-left: 25%;
+    grid-column: span 3;
 }
 
 .control_battle_button_top {

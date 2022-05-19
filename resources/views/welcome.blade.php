@@ -11,13 +11,25 @@
     <header style="height:300px; weight: 300px;">
     </header>
     <section class="battle_section">
-        <div class="control_battle">
-            <input type="text" id="id_cell">
-            <div class="container_control_battle">
-                <button class="control_battle_button_top">Вверх </button>
-                <button class="control_battle_button_left">Влево</button>
-                <button id="buttonMoveRight" onclick="moveRight()" class="control_battle_button_right">Вправо </button>
-                <button class="control_battle_button_down">Вниз </button>
+        <div class="battle_panel">
+            <div class="control_battle">
+                <input type="text" id="id_cell" value="p-1">
+                <div class="container_control_battle">
+                    <button class="control_battle_button_select_unit"> Выбрать юнита</button>
+                    <button onclick="moveTop()" class="control_battle_button_top">Вверх </button>
+                    <button onclick="moveLeft()" class="control_battle_button_left">Влево</button>
+                    <button onclick="moveRight()" class="control_battle_button_right">Вправо </button>
+                    <button onclick="moveDown()"class="control_battle_button_down">Вниз </button>
+                </div>
+            </div>
+            <div class="info_battle_panel">
+                <p> Название: <p>
+                <p> Количество моделек: </p>
+                <p> Здоровье: </p>
+                <p> Броня: </p>
+                <p> Урон: </p>
+                <p> Защита: </p>
+                <p> Атака: </p>
             </div>
         </div>
         <div>
@@ -77,6 +89,38 @@
     </section>
 </body>
 <script>
+    function moveTop(){
+        elements = document.querySelector('#' + id_cell.value).parentNode.childNodes;
+        element = document.querySelector('#' + id_cell.value)
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].id == id_cell.value) {
+                elements[i].id = ''
+                positionElement = i;
+                value = elements[i].innerText;
+                elements[i].innerText = '';
+                break;
+            }
+        }
+        element.parentNode.previousSibling.previousSibling.childNodes[positionElement].id = id_cell.value;
+        element.parentNode.previousSibling.previousSibling.childNodes[positionElement].innerText = value;
+    }
+
+    function moveDown(){
+        elements = document.querySelector('#' + id_cell.value).parentNode.childNodes;
+        element = document.querySelector('#' + id_cell.value)
+        for (var i = 0; i < elements.length; i++) {
+            if (elements[i].id == id_cell.value) {
+                elements[i].id = ''
+                positionElement = i;
+                value = elements[i].innerText;
+                elements[i].innerText = '';
+                break;
+            }
+        }
+        element.parentNode.nextSibling.nextSibling.childNodes[positionElement].id = id_cell.value;
+        element.parentNode.nextSibling.nextSibling.childNodes[positionElement].innerText = value;
+    }
+
     function moveRight(){
         el = document.querySelector("#" + id_cell.value);
         el.nextSibling.nextSibling.innerHTML = el.innerHTML;
@@ -84,7 +128,15 @@
         el.nextSibling.nextSibling.id = el.id;
         el.id = "";
     }
-    //document.querySelector("#buttonMoveRight").onclick = moveRight
+
+    function moveLeft(){
+        el = document.querySelector("#" + id_cell.value);
+        el.previousSibling.previousSibling.innerHTML = el.innerHTML;
+        el.innerHTML = "";
+        el.previousSibling.previousSibling.id = el.id;
+        el.id = "";
+    }
     battle_field = document.querySelector('.battle_field');
+    
 </script>
 </html>
