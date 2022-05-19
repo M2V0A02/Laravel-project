@@ -1,0 +1,66 @@
+.flex{
+    display: flex;
+}
+
+.battle_section{
+    display: flex;
+}
+
+.control_battle {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_control_battle {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.control_battle_button_top {
+    width: 33%;
+    margin-left: 33%;
+    grid-column: span 3;
+}
+
+.control_battle_button_left {
+    width: 50%;
+    grid-column: span 2;
+}
+
+.control_battle_button_right {
+    grid-column: span 1;
+}
+
+.control_battle_button_down {
+    width: 33%;
+    margin-left: 33%;
+    grid-column: span 3;
+}
+
+.battle_field {
+    border-spacing: 1px;
+}
+
+.battle_field_cell {
+    height: 60px;
+    width: 60px;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+}
+
+.battle_field_line:nth-child(2n + 1)>.battle_field_cell:nth-child(2n){
+    background-color: red;
+}
+
+.battle_field_line:nth-child(2n + 1)>.battle_field_cell:nth-child(2n + 1){
+    background-color: black;
+}
+
+.battle_field_line:nth-child(2n)>.battle_field_cell:nth-child(2n){
+    background-color: black;
+}
+
+.battle_field_line:nth-child(2n)>.battle_field_cell:nth-child(2n + 1){
+    background-color: red;
+}
