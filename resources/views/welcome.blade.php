@@ -12,11 +12,11 @@
     </header>
     <section class="battle_section">
         <div class="control_battle">
-            <input type="text">
+            <input type="text" id="id_cell">
             <div class="container_control_battle">
                 <button class="control_battle_button_top">Вверх </button>
                 <button class="control_battle_button_left">Влево</button>
-                <button class="control_battle_button_right">Вправо </button>
+                <button id="buttonMoveRight" onclick="moveRight()" class="control_battle_button_right">Вправо </button>
                 <button class="control_battle_button_down">Вниз </button>
             </div>
         </div>
@@ -76,4 +76,15 @@
         </div>
     </section>
 </body>
+<script>
+    function moveRight(){
+        el = document.querySelector("#" + id_cell.value);
+        el.nextSibling.nextSibling.innerHTML = el.innerHTML;
+        el.innerHTML = "";
+        el.nextSibling.nextSibling.id = el.id;
+        el.id = "";
+    }
+    //document.querySelector("#buttonMoveRight").onclick = moveRight
+    battle_field = document.querySelector('.battle_field');
+</script>
 </html>
