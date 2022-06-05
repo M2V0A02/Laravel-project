@@ -1,0 +1,20 @@
+li {
+    display: inline;
+}
+
+.ui_select_unit {
+    display: flex;
+}
+
+.li_select_unit {
+    width: 50px;
+}
+
+.li_select_unit > img {
+    width: 50px;
+}
+
+.ui_select_equipment {
+    display: flex;
+    flex-direction: column;
+}

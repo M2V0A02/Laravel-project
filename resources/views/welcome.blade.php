@@ -104,7 +104,7 @@
     }
 
     function showDate(){
-        let peasant = JSON.parse(localStorage.getItem('peasant-1'));
+        let peasant = JSON.parse(localStorage.getItem(id_cell.value));
         document.querySelector(".info_battle_panel_name").innerText = "Название: " + peasant.name;
         document.querySelector(".info_battle_panel_armor").innerText = "Броня: " + peasant.armor;
         document.querySelector(".info_battle_panel_health").innerText = "Здоровье: " + peasant.health;
@@ -203,15 +203,11 @@
         while ((unit1.amountOfUnits > 0) && (unit2.amountOfUnits > 0)) {
             damageUnit1 = unit1.amountOfUnits / 100 * Math.random(1, 100)  *
                           hitChance(unit1.attack, unit2.defense) * unit1.damage;
-            console.log(damageUnit1)
             damageUnit2 = unit2.amountOfUnits / 100 * Math.random(1, 100)  *
                           hitChance(unit2.attack, unit1.defense) * unit2.damage;
-            console.log(damageUnit2)
             unit1.amountOfUnits -= Math.round(damageUnit2 / unit1.health);
             unit2.amountOfUnits -= Math.round(damageUnit1 / unit2.health);
         }
-        console.log(unit1.amountOfUnits)
-        console.log(unit2.amountOfUnits)
         if (unit1.amountOfUnits <= 0)
             destroyUnit(idUnit1)
         if (unit2.amountOfUnits <= 0)

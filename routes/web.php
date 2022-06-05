@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Storage;
 use App\Models\Unit;
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,8 @@ use App\Models\Unit;
 Route::get('/', function () {
     $units = Unit::all();
     return view('welcome', ['units' => $units]);
+});
+
+Route::get('/constructor', function () {
+    return view('constructor');
 });
